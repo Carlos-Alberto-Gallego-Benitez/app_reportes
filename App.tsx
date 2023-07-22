@@ -1,13 +1,8 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
 
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {
+  Image,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -64,32 +59,65 @@ function App(): JSX.Element {
 
   return (
     <SafeAreaView style={backgroundStyle}>
-      <StatusBar
+      {/* <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
-      />
+      /> */}
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <Header />
+        {/* <Header /> */}
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
+          <Section title="REPORTES ARBOLETES">
+            Edit to change this screen and then come back to see your edits.
           </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+          <View style={styles.container}>
+            <View style={styles.card_template}>
+              <Image
+                style={styles.card_image}
+                source={require('./image/icons/reciclaje.png')}
+              />
+              <View style={styles.text_container}>
+                <Text style={styles.card_title}>Baches</Text>
+              </View>
+            </View>
+
+            <View style={styles.card_template}>
+              <Image
+                style={styles.card_image}
+                source={require('./image/icons/reciclaje.png')}
+              />
+              <View style={styles.text_container}>
+                <Text style={styles.card_title}>Accidentes/Seguridad</Text>
+              </View>
+            </View>
+          </View>
+
+          <View style={styles.container}>
+            <View style={styles.card_template}>
+              <Image
+                style={styles.card_image}
+                source={require('./image/icons/reciclaje.png')}
+              />
+              <View style={styles.text_container}>
+                <Text style={styles.card_title}>Alumbrado Público</Text>
+              </View>
+            </View>
+
+            <View style={styles.card_template}>
+              <Image
+                style={styles.card_image}
+                source={require('./image/icons/reciclaje.png')}
+              />
+              <View style={styles.text_container}>
+                <Text style={styles.card_title}>Medio Ambiente</Text>
+              </View>
+            </View>
+            
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -103,15 +131,50 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontSize: 24,
-    fontWeight: '600',
+    fontWeight: '700',
+    textAlign: 'center',
+    fontFamily: 'workSans-regular',
   },
   sectionDescription: {
     marginTop: 8,
     fontSize: 18,
     fontWeight: '400',
+    fontFamily: 'Montserrat-Regular',
   },
   highlight: {
     fontWeight: '700',
+  },
+  container: {
+    flex: 2,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 30,
+    marginTop: 30,
+  },
+  card_template: {
+    width: 150,
+    height: 150,
+    boxShadow: '0 0 14.3676px rgba(0,0,0,.25)',
+  },
+  card_image: {
+    width: 150,
+    height: 150,
+    borderRadius: 10,
+  },
+  text_container: {
+    position: 'absolute',
+    width: 150,
+    height: 30,
+    bottom: 0,
+    padding: 5,
+    backgroundColor: 'rgba(0,0,0, 0.3)',
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
+  },
+  card_title: {
+    color: 'white',
+    textAlign: 'center'
   },
 });
 
